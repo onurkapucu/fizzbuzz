@@ -14,7 +14,7 @@ Based on the requirements and importance of outcome, one can use probabilistic c
 
 # Personal Comments
 Fizbuzz and fibonacci parts of the code were straightforward.
-Intiutively, I first thought of implementing a deterministic primality test. My logic was checking if the fibonacci number is divisible to numbers upto its square root. I came up with "fizbuzz_deterministic" code. Although it is deterministic, it requires heavier processing and will eventually slow down. Therefore, I searched for lighter primality tests online and I coded "fizzbuzz_stochastic" using Rabin-Miller pseudocode I found online.
+Intiutively, I first thought of implementing a deterministic primality test. My logic was checking if the fibonacci number is divisible to numbers upto its square root.Then I decided on keeping the primes calculated in previous steps to speed up the function.This way I am am calculating primes upto square root of the fibonacci and expanding the list every time. I check divisibility of my fibonacci to these primes.This is "fizbuzz_deterministic" code. Although it is deterministic, it requires heavier processing and will eventually slow down. Therefore, I searched for lighter primality tests online and I coded "fizzbuzz_stochastic" using Rabin-Miller pseudocode I found online.
 Despite its simplicity this is a stochastic primality test with a possibility of false positives. 
 
 # Addendum - Rabin Miller Primality Test Logic
