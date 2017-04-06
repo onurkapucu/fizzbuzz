@@ -72,5 +72,5 @@ def is_prime(n):
                 if flag:
                     return False
         return True
-            
+
 calc_fib(n)
