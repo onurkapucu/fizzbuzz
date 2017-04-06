@@ -20,19 +20,19 @@ Despite its simplicity this is a stochastic primality test with a possibility of
 # Addendum - Rabin Miller Primality Test Logic
 After searching online for primality tests, I decided on trying to implement the Miller-Rabin method. Pseudocode is as follows:(Taken from https://en.wikipedia.org/wiki/Miller–Rabin_primality_test)  
   
-<p>
+
 write n − 1 as 2r·d with d odd by factoring powers of 2 from n − 1  
 WitnessLoop: repeat k times:  
-pick a random integer a in the range [2, n − 2]
-...x ← ad mod n  
-...if x = 1 or x = n − 1 then  
-......continue WitnessLoop  
-...repeat r − 1 times:  
-......x ← x2 mod n  
-......if x = 1 then  
-.........return composite  
-......if x = n − 1 then  
-.........continue WitnessLoop  
-...return composite  
-return probably prime  </p>
+&nbsp;&nbsp;&nbsp;pick a random integer a in the range [2, n − 2]
+&nbsp;&nbsp;&nbsp;x ← ad mod n  
+&nbsp;&nbsp;&nbsp;if x = 1 or x = n − 1 then  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue WitnessLoop  
+&nbsp;&nbsp;&nbsp;repeat r − 1 times:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x ← x2 mod n  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if x = 1 then  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return composite  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if x = n − 1 then  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue WitnessLoop  
+&nbsp;&nbsp;&nbsp;return composite  
+return probably prime  
 
