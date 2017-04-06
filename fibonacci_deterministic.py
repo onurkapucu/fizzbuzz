@@ -16,21 +16,16 @@ generatedUpto = 2
 def calc_fib(fib_n):
         a = [0] * (3) 
         a[0] = 1 
-        a[1] = 2
+        a[1] = 1
         if fib_n == 1:
-            print(1)
+            print(a[0])
         elif fib_n == 2:
-            print(1)
-            print(1)
-        elif fib_n == 3:
-            print(1)
-            print(1)
-            print('BuzzFizz')
+            print(a[0])
+            print(a[1])
         else:
-            print(1)
-            print(1)
-            print('BuzzFizz')
-            for i in range(4, (fib_n)+1):
+            print(a[0])
+            print(a[1])
+            for i in range(3, (fib_n)+1):
                 a[2] = (a[0] + a[1])
                 a[0]=a[1]
                 a[1]=a[2]
@@ -45,6 +40,18 @@ def calc_fib(fib_n):
                 else:
                     print(a[2])
 
+#Here I check if the given value is prime or not by checking if it is divisible to prime values up to it's square root.
+def is_prime(n):
+    global generatedUpto
+    global primes
+    if not isPrimeSoFar(n):
+        return(False)
+    continueGeneration(generatedUpto+1,n)
+    generatedUpto = n
+    if n in primes:
+        return(True)
+    return(False)
+
 def isPrimeSoFar(i):
     sqrt = i**(0.5)
     for p in primes:
@@ -54,26 +61,9 @@ def isPrimeSoFar(i):
             return False
     return True
 
-def is_prime(n):
-    global generatedUpto
-    global primes
-    for i in primes:
-        if n % i == 0:
-            return(False)
-    x = len(primes)
-    print(primes)
-    continueGeneration(generatedUpto+1,n)
-    generatedUpto = n
-    print(primes)
-    print(primes[x])
-    for i in primes[x:]:
-        if n % i==0:
-            return(False)
-    return(True)
-
 def continueGeneration(n1,n2):
     global primes
-    for i in range(n1,n2):
+    for i in range(n1,n2+1):
         if isPrimeSoFar(i):
             primes.append(i)
 
