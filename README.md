@@ -23,17 +23,17 @@ After searching online for primality tests, I decided on trying to implement the
 "  
 write n − 1 as 2r·d with d odd by factoring powers of 2 from n − 1  
 WitnessLoop: repeat k times:  
-`<addr>`pick a random integer a in the range [2, n − 2]  
-`<addr>`x ← ad mod n  
-`<addr>`if x = 1 or x = n − 1 then  
-`<addr>``<addr>`continue WitnessLoop  
-   repeat r − 1 times:  
-      x ← x2 mod n  
-      if x = 1 then  
-         return composite  
-      if x = n − 1 then  
-         continue WitnessLoop  
-   return composite  
+`  `pick a random integer a in the range [2, n − 2]  
+`  `x ← ad mod n  
+`  `if x = 1 or x = n − 1 then  
+`     `continue WitnessLoop  
+`  `repeat r − 1 times:  
+`  ``  `x ← x2 mod n  
+`  ``  `if x = 1 then  
+`  ``  ``  `return composite  
+`  ``  `if x = n − 1 then  
+`  ``  ``  `continue WitnessLoop  
+`  `return composite  
 return probably prime  
 "  
 
