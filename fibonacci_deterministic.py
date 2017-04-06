@@ -40,17 +40,24 @@ def calc_fib(fib_n):
                 else:
                     print(a[2])
 
-#Here I check if the given value is prime or not by checking if it is divisible to prime values up to it's square root.
+#Here I check if the given value is prime or not. I have a "primes" array that keeps being updated as needed. 
+#I first make a quick check, using isPrimeSoFar. This only checks if given number is divisible by prime numbers generated in the previous steps.
+#Target is speeding up function. If I cannot detect compostie at this step, I go ahead and generate all the prime numbers upto the
+#fibonacci number using continueGeneration.
+
 def is_prime(n):
     global generatedUpto
     global primes
-    if not isPrimeSoFar(n):
+    if not isPrimeSoFar(n):                #Quick check of primality using the precalculated prime numbers.
         return(False)
-    continueGeneration(generatedUpto+1,n)
+    continueGeneration(generatedUpto+1,n)  #Start generating prime numbers between latest attempt to current fibonacci number.
     generatedUpto = n
-    if n in primes:
+    if n in primes:                        #Check if current fibonacci is in updated primes list
         return(True)
     return(False)
+
+#isPrimeSoFar is a primality checker. It tries to divide input number with prime numbers upto inputs squre root. If it is divisible returns FALSE
+#meaning that the input number is composite, else it returns True meaning that number is prime.  
 
 def isPrimeSoFar(i):
     sqrt = i**(0.5)
@@ -61,7 +68,10 @@ def isPrimeSoFar(i):
             return False
     return True
 
-def continueGeneration(n1,n2):
+#This function expands the primes list from the latest call to current fibonacci. It checks primality of all numbers in between n1 and n2 by calling
+#isPrimeSoFar which tries to divide its input with prime values upto its square root.
+
+def continueGeneration(n1,n2):              
     global primes
     for i in range(n1,n2+1):
         if isPrimeSoFar(i):
