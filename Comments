@@ -19,8 +19,6 @@ WitnessLoop: repeat k times:
 return probably prime
 "
 
+Despite its simplicity this is a stochastic primality test with a possibility of false positives. Therefore I also added a deterministic code as well.
 
-
-Despite its simplicity this is a stochastic primality test with a possibility of false positives. 
-
-Based on the requirements and importance of outcome, one can use Rabin Miller to determine if a number is composite and use the deterministic method I mentioned above to see if it is prime.
+Based on the requirements and importance of outcome, one can use probabilistic code or deterministic code to answer the question.
